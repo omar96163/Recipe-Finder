@@ -16,9 +16,14 @@ const RecipeDetail = () => {
     }
   }, [data, idCategory]);
 
-  if (isLoading) return <p className="text-center text-gray-500 text-xl">Waiting...</p>;
-  if (error) return <p className="text-center text-red-500 text-lg">Invalid ID.</p>;
-  if (!recipe) return <p className="text-center text-red-500 text-lg">Recipe not found.</p>;
+  if (isLoading)
+    return <p className="text-center text-gray-500 text-xl">Waiting...</p>;
+  if (error)
+    return <p className="text-center text-red-500 text-lg">Invalid ID.</p>;
+  if (!recipe)
+    return (
+      <p className="text-center text-red-500 text-lg">Recipe not found.</p>
+    );
 
   return (
     <div className="max-w-3xl mx-auto p-6 shadow-lg rounded-lg bg-white mt-10">
