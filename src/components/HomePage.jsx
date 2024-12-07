@@ -9,7 +9,7 @@ function HomePage() {
   if (data)
     return (
       <div className="p-6 bg-slate-300">
-        <h1 className="h-0 gap-10 rounded-full lg:text-3xl sm:text-base font-bold mb-5 text-slate-600 flex items-center justify-end flex-row-reverse bg-white p-10 ">
+        <h1 className="h-0 gap-10 rounded-full lg:text-3xl font-bold mb-5 text-slate-600 flex items-center justify-end flex-row-reverse bg-white p-10 sm:flex">
           <dir className="ml-auto flex gap-5">
             <input
               className="text-base bg-slate-300 rounded-full font-thin px-4 py-2"
@@ -18,7 +18,7 @@ function HomePage() {
               name="search"
             />
             <button
-              className="text-base bg-slate-800 rounded-full text-white font-thin px-4 py-2 hover:text-slate-800 hover:bg-slate-200"
+              className="text-base bg-slate-800 rounded-full text-white font-thin px-4 hover:text-slate-800 hover:bg-slate-200 hover:ring hover:ring-slate-400"
               type="button"
             >
               Search
@@ -31,7 +31,7 @@ function HomePage() {
             alt="recipes logo"
           />
         </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-20 pt-10">
           {data.categories.map((item) => (
             <Link to={`/recipe/${item.idCategory}`} key={item.idCategory}>
               <div className="bg-white border rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105 hover:shadow-lg hover:ring hover:ring-slate-600">

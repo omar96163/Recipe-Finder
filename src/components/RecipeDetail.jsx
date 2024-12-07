@@ -16,23 +16,28 @@ const RecipeDetail = () => {
     }
   }, [data, idCategory]);
 
-  if (isLoading) return <p>Waiting...</p>;
-  if (error) return <p className="text-red-500 text-sm">Wrong ID</p>;
-  if (!recipe) return <p className="text-red-500 text-sm">Recipe not found.</p>;
+  if (isLoading)
+    return <p className="text-center text-gray-500 text-xl">Waiting...</p>;
+  if (error)
+    return <p className="text-center text-red-500 text-lg">Invalid ID.</p>;
+  if (!recipe)
+    return (
+      <p className="text-center text-red-500 text-lg">Recipe not found.</p>
+    );
 
   return (
-    <div className="max-w-3xl mx-auto p-6 shadow">
+    <div className="max-w-3xl mx-auto p-6 shadow-lg rounded-lg bg-white mt-10">
       <img
         src={recipe.strCategoryThumb}
         alt={recipe.strCategory}
-        className="w-full object-cover rounded-lg mb-4"
+        className="w-full object-cover rounded-lg mb-6 shadow-md"
       />
-      <h1 className="text-4xl font-bold mb-4 text-green-600">
+      <h1 className="text-3xl font-extrabold mb-4 text-green-600 text-center">
         {recipe.strCategory}
       </h1>
-      <h2 className="text-2xl font-semibold mb-2">
-        <p className="text-green-400">CategoryDescription:</p>
-        <p className="font-thin">{recipe.strCategoryDescription}</p>
+      <h2 className="text-lg font-medium text-slate-600">
+        <span className="text-green-500">Description:</span>
+        <p className="font-light mt-2">{recipe.strCategoryDescription}</p>
       </h2>
     </div>
   );
